@@ -111,7 +111,7 @@ class BST {
   int search(T value) {
     return searchNode(root, value);
   }
-  int hight() {
+  int depth() {
     return heightTree(root);
   }
   void print() {
