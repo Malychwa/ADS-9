@@ -1,7 +1,9 @@
 // Copyright 2021 NNTU-CS
-#ifndef _________BST_H_
+#ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
+
 #include<iosream>
+
 template<typename T>
 class BST {
  private:
@@ -147,5 +149,4 @@ template<typename T>
     }
     return root;
   }
-
-#endif  // _________BST_H_
+#endif  // INCLUDE_BST_H_
