@@ -12,12 +12,12 @@ class BST {
   Node *right;
   };
   Node *root;
-  Node* addNode(Node*, T&);
-  int searchNode(Node*, T&);
+  Node* addNode(Node*, T);
+  int searchNode(Node*, T);
   int heightTree(Node*);
   void printTree(Node*);
   void delTree(Node*);
-  Node* delNode(Node*, T&);
+  Node* delNode(Node*, T);
 
  public:
   BST();
@@ -42,7 +42,7 @@ BST<T>::~BST() {
 }
 
 template<typename T>
-typename BST<T>::Node* BST<T>::addNode(Node* root, T& val) {
+typename BST<T>::Node* BST<T>::addNode(Node* root, T val) {
   if (root == nullptr) {
     root = new Node;
     root->value = val;
@@ -59,12 +59,12 @@ typename BST<T>::Node* BST<T>::addNode(Node* root, T& val) {
 }
 
 template<typename T>
-  void BST<T>::add(T& val) {
+  void BST<T>::add(T val) {
     root = addNode(root, val);
   }
 
 template<typename T>
-  int BST<T>::searchNode(Node* root, T& val) {
+  int BST<T>::searchNode(Node* root, T val) {
     if (root == nullptr)
       return 0;
     else if (root->value == val)
@@ -113,21 +113,21 @@ template<typename T>
   }
 
 template<typename T>
-  typename BST<T>::Node* BST<T>::delNode(typename BST<T>::Node* root, T& value) {
+  typename BST<T>::Node* BST<T>::delNode(typename BST<T>::Node* root, T value) {
     Node* p, * v;
     if (root == nullptr)
       return root;
     else if (value < root->value)
       root->left = delNode(root->left, value);
-    else if (value > root->value)
+    else if (value > root->value) {
       root->right = delNode(root->right, value);
-    else {
+    } else {
       p = root;
       if (root->right == nullptr)
         root = root->left;
-      else if (root->left == nullptr)
+      else if (root->left == nullptr) {
         root = root->right;
-      else {
+      } else {
         v = root->left;
         if (v->right) {
           while (v->right->right)
@@ -147,6 +147,4 @@ template<typename T>
     }
     return root;
   }
-
-
 #endif  // INCLUDE_BST_H_
