@@ -1,6 +1,6 @@
 // Copyright 2021 NNTU-CS
-#ifndef INCLUDE_BST_H_
-#define INCLUDE_BST_H_
+#ifdef _BST_H_
+#define _BST_H_
 #include<iosream>
 
 template<typename T>
@@ -118,4 +118,4 @@ class BST {
     printTree(root);
   }
 };
-#endif  // INCLUDE_BST_H_
+#endif // _BST_H_
