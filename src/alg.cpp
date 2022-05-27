@@ -15,7 +15,7 @@ BST<std::string> makeTree(const char* filename) {
   while (!file.eof()) {
     char simb = file.get();
     if ((simb >= 'a' && simb <= 'z') || (simb >= 'A' && simb <= 'Z')) {
-      if (temp >= 'A' && temp <= 'Z')
+      if (simb >= 'A' && simb <= 'Z')
         simb += 'a' - 'A';
       word += simb;
     } else if (word != "") {
