@@ -1,5 +1,5 @@
 // Copyright 2021 NNTU-CS
-#ifndef INCLUDE_BST_H_
+#ifndef _________BST_H_
 #define INCLUDE_BST_H_
 #include<iosream>
 template<typename T>
@@ -147,4 +147,5 @@ template<typename T>
     }
     return root;
   }
-#endif  // INCLUDE_BST_H_
+
+#endif  // _________BST_H_
