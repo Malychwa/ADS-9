@@ -44,7 +44,11 @@ class BST {
     } else {
      int L = heightTree(root->left);
      int R = heightTree(root->right);
-     return ((L > R)? L:R)+1;
+     if (R > L) {
+      return R + 1;
+     } else {
+      return L + 1;
+     }
     }
   }
   void printTree(Node* root) {
