@@ -14,37 +14,7 @@ class BST {
   Node *right;
   };
   Node *root;
-  Node* addNode(Node*, T);
-  int searchNode(Node*, T);
-  int heightTree(Node*);
-  void printTree(Node*);
-  void delTree(Node*);
-  Node* delNode(Node*, T);
-
- public:
-  BST();
-  ~BST();
-  void add(T&);
-  int search(T&) {
-    return searchNode(root, value);
-  }
-  int hight() {
-    return heightTree(root);
-  }
-  void print();
-};
-
-template <typename T>
-BST<T>::BST():root(nullptr) {}
-
-template<typename T>
-BST<T>::~BST() {
-  if (root)
-    delTree(root);
-}
-
-template<typename T>
-typename BST<T>::Node* BST<T>::addNode(Node* root, T val) {
+  Node* addNode(Node* root, T val) {
   if (root == nullptr) {
     root = new Node;
     root->value = val;
@@ -58,15 +28,8 @@ typename BST<T>::Node* BST<T>::addNode(Node* root, T val) {
     root->count++;
   }
   return root;
-}
-
-template<typename T>
-  void BST<T>::add(T val) {
-    root = addNode(root, val);
   }
-
-template<typename T>
-  int BST<T>::searchNode(Node* root, T val) {
+  int searchNode(Node* root, T val){
     if (root == nullptr)
       return 0;
     else if (root->value == val)
@@ -76,20 +39,16 @@ template<typename T>
     else
       return searchNode(root->right, val);
   }
-
-template<typename T>
-int BST<T>::heightTree(Node* root) {
-  if (root == nullptr) {
+  int heightTree(Node* root) {
+   if (root == nullptr) {
     return 0;
-  } else {
+   } else {
     int L = heightTree(root->left);
     int R = heightTree(root->right);
     return ((L > R)? L:R)+1;
+   }
   }
-}
-
-template<typename T>
-  void BST<T>::printTree(Node* root) {
+  void printTree(Node* root) {
     if (root == nullptr)
       return;
     printTree(root->left);
@@ -97,14 +56,7 @@ template<typename T>
       std::cout << root->value << " ";
     printTree(root->right);
   }
-
-template<typename T>
-  void BST<T>::print() {
-    printTree(root);
-  }
-
-template<typename T>
-  void BST<T>::delTree(Node* root) {
+  void delTree(Node* root) {
     if (root == nullptr) {
       return;
     } else {
@@ -113,9 +65,7 @@ template<typename T>
       delete root;
     }
   }
-
-template<typename T>
-  typename BST<T>::Node* BST<T>::delNode(typename BST<T>::Node* root, T value) {
+  Node* delNode(Node* root, T value) {
     Node* p, * v;
     if (root == nullptr) {
       return root;
@@ -149,4 +99,24 @@ template<typename T>
     }
     return root;
   }
+ public:
+  BST():root(nullptr) {}
+  ~BST() {
+  if (root)
+    delTree(root);
+  }
+  void add(T& val){
+    root = addNode(root, val);
+  }
+  int search(T& value) {
+    return searchNode(root, value);
+  }
+  int hight() {
+    return heightTree(root);
+  }
+  void print() {
+    printTree(root);
+  }
+};
+
 #endif  // INCLUDE_BST_H_
