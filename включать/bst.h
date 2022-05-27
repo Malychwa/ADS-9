@@ -1,4 +1,3 @@
-// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
 
@@ -115,17 +114,17 @@ template<typename T>
 template<typename T>
   typename BST<T>::Node* BST<T>::delNode(typename BST<T>::Node* root, T value) {
     Node* p, * v;
-    if (root == nullptr)
+    if (root == nullptr) {
       return root;
-    else if (value < root->value)
+    } else if (value < root->value) {
       root->left = delNode(root->left, value);
-    else if (value > root->value) {
+    } else if (value > root->value) {
       root->right = delNode(root->right, value);
     } else {
       p = root;
-      if (root->right == nullptr)
-        root = root->left;
-      else if (root->left == nullptr) {
+      if (root->right == nullptr) {
+       root = root->left;
+      } else if (root->left == nullptr) {
         root = root->right;
       } else {
         v = root->left;
