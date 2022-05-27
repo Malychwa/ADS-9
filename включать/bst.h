@@ -40,15 +40,15 @@ class BST {
       return searchNode(root->right, val);
   }
   int heightTree(Node* root) {
-   if (root == nullptr) {
-    return 0;
-   } else {
-    int L = heightTree(root->left);
-    int R = heightTree(root->right);
-    return ((L > R)? L:R)+1;
-   }
+    if (root == nullptr) {
+     return 0;
+    } else {
+     int L = heightTree(root->left);
+     int R = heightTree(root->right);
+     return ((L > R)? L:R)+1;
+    }
   }
- void printTree(Node* root) {
+  void printTree(Node* root) {
     if (root == nullptr)
       return;
     printTree(root->left);
