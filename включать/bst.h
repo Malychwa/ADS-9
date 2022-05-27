@@ -1,5 +1,5 @@
 // Copyright 2021 NNTU-CS
-#ifndef _BST_H_
-#define _BST_H_
+#ifndef _________BST_H_
+#define _________BST_H_
 
-#endif  // _BST_H_
+#endif  // _________BST_H_
