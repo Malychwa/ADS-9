@@ -29,7 +29,7 @@ class BST {
   }
   return root;
   }
-  int searchNode(Node* root, T val){
+  int searchNode(Node* root, T val) {
     if (root == nullptr)
       return 0;
     else if (root->value == val)
@@ -48,7 +48,7 @@ class BST {
     return ((L > R)? L:R)+1;
    }
   }
-  void printTree(Node* root) {
+ void printTree(Node* root) {
     if (root == nullptr)
       return;
     printTree(root->left);
@@ -99,16 +99,17 @@ class BST {
     }
     return root;
   }
+
  public:
   BST():root(nullptr) {}
   ~BST() {
   if (root)
     delTree(root);
   }
-  void add(T& val){
+  void add(T val) {
     root = addNode(root, val);
   }
-  int search(T& value) {
+  int search(T value) {
     return searchNode(root, value);
   }
   int hight() {
