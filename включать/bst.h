@@ -1,5 +1,5 @@
 // Copyright 2021 NNTU-CS
-#ifdef _BST_H_
+#ifndef _BST_H_
 #define _BST_H_
 #include<iosream>
 
